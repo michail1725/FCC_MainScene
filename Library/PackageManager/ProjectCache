@@ -5,27 +5,27 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637687761809138865
-    m_Hash: 1873873929
+      ticks: 637699209964791946
+    m_Hash: 2726442396
   m_LockFileStatus:
     m_FilePath: E:/repos/UnityProjects/FCC_MainScene/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637687761809598710
-    m_Hash: 1735364811
+      ticks: 637699209964994298
+    m_Hash: 1460271292
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
-    - packageId: com.unity.collab-proxy@1.5.7
+    - packageId: com.unity.collab-proxy@1.11.2
       testable: 0
       isDirectDependency: 1
-      version: 1.5.7
+      version: 1.11.2
       source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.collab-proxy@1.5.7
+      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.collab-proxy@1.11.2
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
       displayName: Version Control
@@ -97,23 +97,22 @@ m_PackageAssets:
         - 2.1.0-preview.5
         - 2.1.0-preview.6
         verified: 1.5.7
-      dependencies:
-      - name: com.unity.nuget.newtonsoft-json
-        version: 2.0.0
-      resolvedDependencies:
-      - name: com.unity.nuget.newtonsoft-json
-        version: 2.0.0
+      dependencies: []
+      resolvedDependencies: []
       keywords:
-      - vsc
-      - version
-      - control
-      - collab
-      - collaboration
-      - collaborate
-      - teams
-      - team
-      - cloud
       - backup
+      - cloud
+      - collab
+      - collaborate
+      - collaboration
+      - control
+      - plastic
+      - plasticscm
+      - source
+      - team
+      - teams
+      - version
+      - vcs
       registry:
         id: main
         name: 
@@ -126,20 +125,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637551413290000000
+      datePublishedTicks: 637679178630000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-        revision: f079d307344f568804d3ea6d781013135e614e45
+        revision: 3bc7fe2ab9acbe4538785fec6100ac17fe9e8da5
         path: 
-    - packageId: com.unity.ide.rider@2.0.7
+    - packageId: com.unity.ide.rider@3.0.7
       testable: 0
       isDirectDependency: 1
-      version: 2.0.7
+      version: 3.0.7
       source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.ide.rider@2.0.7
+      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.ide.rider@3.0.7
       assetPath: Packages/com.unity.ide.rider
       name: com.unity.ide.rider
       displayName: JetBrains Rider Editor
@@ -209,17 +208,11 @@ m_PackageAssets:
         - 3.0.7
         verified: 2.0.7
       dependencies:
-      - name: com.unity.test-framework
-        version: 1.1.1
-      resolvedDependencies:
-      - name: com.unity.test-framework
-        version: 1.1.26
       - name: com.unity.ext.nunit
         version: 1.0.6
-      - name: com.unity.modules.imgui
-        version: 1.0.0
-      - name: com.unity.modules.jsonserialize
-        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.ext.nunit
+        version: 1.0.6
       keywords: []
       registry:
         id: main
@@ -233,20 +226,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637334461080000000
+      datePublishedTicks: 637572251600000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-        revision: abb44f053e9a41d2e00e149e32a19bcec76e98b4
+        revision: 3007c42a679bbe2c082c276e8d79279110964553
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.9
+    - packageId: com.unity.ide.visualstudio@2.0.11
       testable: 0
       isDirectDependency: 1
-      version: 2.0.9
+      version: 2.0.11
       source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.ide.visualstudio@2.0.9
+      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.ide.visualstudio@2.0.11
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -300,7 +293,7 @@ m_PackageAssets:
         version: 1.1.9
       resolvedDependencies:
       - name: com.unity.test-framework
-        version: 1.1.26
+        version: 1.1.29
       - name: com.unity.ext.nunit
         version: 1.0.6
       - name: com.unity.modules.imgui
@@ -320,20 +313,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637580705480000000
+      datePublishedTicks: 637613656180000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-        revision: c7cd4c6319806423b3d918b3e9599244e3993d41
+        revision: 680e06d94ffca728223ae2cb14bb919cd354e2c1
         path: 
-    - packageId: com.unity.ide.vscode@1.2.3
+    - packageId: com.unity.ide.vscode@1.2.4
       testable: 0
       isDirectDependency: 1
-      version: 1.2.3
+      version: 1.2.4
       source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.ide.vscode@1.2.3
+      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.ide.vscode@1.2.4
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -391,20 +384,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637394922300000000
+      datePublishedTicks: 637660806170000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
-        revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
+        url: git+https://github.com/Unity-Technologies/com.unity.ide.vscode.git
+        revision: 1f4f605d5c988cb610c372b5c5216c46cc8f5d30
         path: 
-    - packageId: com.unity.probuilder@4.5.2
+    - packageId: com.unity.probuilder@5.0.3
       testable: 0
       isDirectDependency: 1
-      version: 4.5.2
+      version: 5.0.3
       source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.probuilder@4.5.2
+      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.probuilder@5.0.3
       assetPath: Packages/com.unity.probuilder
       name: com.unity.probuilder
       displayName: ProBuilder
@@ -421,7 +414,12 @@ m_PackageAssets:
 
         Advanced features include UV editing, vertex colors,
         parametric shapes, and texture blending. With ProBuilder''s model export
-        feature it''s easy to tweak your levels in any external 3D modelling suite.'
+        feature it''s easy to tweak your levels in any external 3D modelling suite.
+
+
+        If
+        you are using URP/HDRP, be careful to also import the corresponding sample
+        project in the section below to get the proper materials.'
       status: 4
       errors: []
       versions:
@@ -495,9 +493,17 @@ m_PackageAssets:
       dependencies:
       - name: com.unity.settings-manager
         version: 1.0.3
+      - name: com.unity.modules.physics
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
       resolvedDependencies:
       - name: com.unity.settings-manager
         version: 1.0.3
+      - name: com.unity.modules.physics
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
       keywords:
       - 3d
       - model
@@ -531,97 +537,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637613656650000000
+      datePublishedTicks: 637534907290000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/com.unity.probuilder.git
-        revision: 27f52072e5f94638d1f81bc53df38e59d5bac785
+        url: git+https://github.com/Unity-Technologies/com.unity.probuilder.git
+        revision: 6a81f0485f2eed8c8a0c193422d52d55f64cd79c
         path: 
-    - packageId: com.unity.progrids@3.0.3-preview.6
+    - packageId: com.unity.test-framework@1.1.29
       testable: 0
       isDirectDependency: 1
-      version: 3.0.3-preview.6
+      version: 1.1.29
       source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.progrids@3.0.3-preview.6
-      assetPath: Packages/com.unity.progrids
-      name: com.unity.progrids
-      displayName: ProGrids
-      author:
-        name: 
-        email: 
-        url: 
-      category: 
-      type: 
-      description: 'Advanced grid and object snapping for the scene view. ProGrids
-        is a dynamically placed grid, available on all 3 axes and at any position
-        in the scene.
-
-
-        ProGrids snaps objects in world space, ensuring consistent
-        placement of objects in your level.
-
-
-        In addition, ProGrids is completely
-        customizable. Change the colors of your grid, the snap sizing, unit of measurement,
-        and more!'
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 3.0.1-preview
-        - 3.0.2-preview
-        - 3.0.3-preview.0
-        - 3.0.3-preview.4
-        - 3.0.3-preview.5
-        - 3.0.3-preview.6
-        compatible:
-        - 3.0.1-preview
-        - 3.0.2-preview
-        - 3.0.3-preview.0
-        - 3.0.3-preview.4
-        - 3.0.3-preview.5
-        - 3.0.3-preview.6
-        verified: 
-      dependencies:
-      - name: com.unity.settings-manager
-        version: 1.0.2
-      resolvedDependencies:
-      - name: com.unity.settings-manager
-        version: 1.0.3
-      keywords:
-      - grid
-      - snap
-      - manipulation
-      - array
-      - align
-      registry:
-        id: main
-        name: 
-        url: https://packages.unity.com
-        scopes: []
-        isDefault: 1
-        capabilities: 7
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637209307060000000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: git+https://github.com/Unity-Technologies/com.unity.progrids.git
-        revision: 381f2b0b5dda11525d53e2c608284a3f68d1beff
-        path: 
-    - packageId: com.unity.test-framework@1.1.26
-      testable: 0
-      isDirectDependency: 1
-      version: 1.1.26
-      source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.test-framework@1.1.26
+      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.test-framework@1.1.29
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -701,13 +630,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637576439750000000
+      datePublishedTicks: 637647922650000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
-        revision: ea9d07e64e6d63c4f2fd8b6bc57df0f452ff4fae
+        revision: dac53542acdab7a12e9ebf111ac588d0e53cf483
         path: 
     - packageId: com.unity.textmeshpro@3.0.6
       testable: 0
@@ -868,12 +797,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
         revision: 01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899
         path: 
-    - packageId: com.unity.timeline@1.4.8
+    - packageId: com.unity.timeline@1.5.6
       testable: 0
       isDirectDependency: 1
-      version: 1.4.8
+      version: 1.5.6
       source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.timeline@1.4.8
+      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.timeline@1.5.6
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -1012,13 +941,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637557616100000000
+      datePublishedTicks: 637613662510000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-        revision: 527e4364e28028f20f04fc51db671eb4bb910a26
+        revision: bba45362fa74fde39bfa14d05688da527254b39f
         path: 
     - packageId: com.unity.ugui@1.0.0
       testable: 0
@@ -2943,80 +2872,6 @@ m_PackageAssets:
         type: git
         url: git+https://github.com/Unity-Technologies/com.unity.settings-manager.git
         revision: 473664ccba1496294b741cf169740a5d54b3d0b6
-        path: 
-    - packageId: com.unity.nuget.newtonsoft-json@2.0.0
-      testable: 0
-      isDirectDependency: 0
-      version: 2.0.0
-      source: 1
-      resolvedPath: E:\repos\UnityProjects\FCC_MainScene\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
-      assetPath: Packages/com.unity.nuget.newtonsoft-json
-      name: com.unity.nuget.newtonsoft-json
-      displayName: Newtonsoft Json
-      author:
-        name: 
-        email: 
-        url: 
-      category: 
-      type: 
-      description: 'Newtonsoft Json for use in Unity projects and Unity packages.
-        Currently synced to version 12.0.2.
-
-
-        This package is used for advanced
-        json serialization and deserialization. Most Unity users will be better suited
-        using the existing json tools built into Unity.
-
-        To avoid assembly
-        clashes, please use this package if you intend to use Newtonsoft Json.'
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0-preview.2
-        - 1.0.0-preview.3
-        - 1.0.0-preview.4
-        - 1.0.1-preview.1
-        - 1.1.2
-        - 2.0.0-preview
-        - 2.0.0-preview.1
-        - 2.0.0-preview.2
-        - 2.0.0
-        - 2.0.1-preview.1
-        compatible:
-        - 1.0.0-preview.2
-        - 1.0.0-preview.3
-        - 1.0.0-preview.4
-        - 1.0.1-preview.1
-        - 1.1.2
-        - 2.0.0-preview
-        - 2.0.0-preview.1
-        - 2.0.0-preview.2
-        - 2.0.0
-        - 2.0.1-preview.1
-        verified: 2.0.0
-      dependencies: []
-      resolvedDependencies: []
-      keywords: []
-      registry:
-        id: main
-        name: 
-        url: https://packages.unity.com
-        scopes: []
-        isDefault: 1
-        capabilities: 7
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637237898320000000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
-        revision: d2fd6ed876261bbd82f59199ad711e7667bf633a
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
