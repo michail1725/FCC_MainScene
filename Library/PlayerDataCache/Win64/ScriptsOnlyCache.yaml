@@ -1,21 +1,34 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Building
+    - BuildingsGrid
     - DynamicGrid
     - MovableCamera
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.DimensionsEditor
     - UnityEditor.ProBuilder.ProBuilderEditor
+    - UnityEditor.ProBuilder.ProBuilderMeshEditor
     - UnityEditor.ProBuilder.ProBuilderShapeEditor
     - UnityEditor.ProBuilder.ProbuilderMoveTool
     - UnityEditor.ProBuilder.ProbuilderRotateTool
     - UnityEditor.ProBuilder.ProbuilderScaleTool
+    Unity.ProBuilder.dll:
+    - UnityEngine.ProBuilder.ProBuilderMesh
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Main.unity:
     - Class: 1
@@ -38,8 +51,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -49,14 +60,44 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2392}
+      Script: {instanceID: 1538}
     - Class: 114
-      Script: {instanceID: 2620}
+      Script: {instanceID: 2126}
+    - Class: 114
+      Script: {instanceID: 2376}
+    - Class: 114
+      Script: {instanceID: 2464}
+    - Class: 114
+      Script: {instanceID: 2588}
+    - Class: 114
+      Script: {instanceID: 2604}
+    - Class: 114
+      Script: {instanceID: 2778}
+    - Class: 114
+      Script: {instanceID: 3002}
+    - Class: 114
+      Script: {instanceID: 3112}
+    - Class: 114
+      Script: {instanceID: 4952}
+    - Class: 114
+      Script: {instanceID: 17486}
+    - Class: 114
+      Script: {instanceID: 17488}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
@@ -171,7 +212,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 5648183942e1c22d510c7a8406031fc8
+      Hash: e7ac095475d77ed147f8beef63c0e453
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovableCamera
@@ -201,7 +242,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 4fead6c3c23440d9b3d55e726070906d
+      Hash: b1253300d7198289c417f4f95144bcad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DynamicGrid
@@ -547,6 +588,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 97a917faeefb1ee5288061b3b8e25a81
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BuildingsGrid
+  - hash:
+      serializedVersion: 2
+      Hash: a02698b45f20dd0e1f5ab830b28815a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Building
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main.unity
