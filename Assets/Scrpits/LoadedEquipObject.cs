@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LoadedEquipObject : MonoBehaviour
 {
-    public Renderer MainRenderer;
     public string pathToFile;
-    
-    
+    public GameObject Object;   
 }

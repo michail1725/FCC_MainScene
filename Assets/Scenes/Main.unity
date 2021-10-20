@@ -3221,7 +3221,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17926
+  m_Name: pb_Mesh17272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3736,12 +3736,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2076398747}
-        m_TargetAssemblyTypeName: BuildingsGrid, Assembly-CSharp
-        m_MethodName: StartPlacingBuilding
-        m_Mode: 2
+        m_TargetAssemblyTypeName: PlacingProcedure, Assembly-CSharp
+        m_MethodName: LoadNewObjOnScene
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 279886248562225772, guid: 12e6ba49373257f4991293c28efd56ab, type: 3}
-          m_ObjectArgumentAssemblyTypeName: Building, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: StartPlacingBuilding
@@ -4535,7 +4535,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17788
+  m_Name: pb_Mesh17134
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5640,10 +5640,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2076398741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94ecc5aa80c2fa418fdaf41578eb8e8, type: 3}
+  m_Script: {fileID: 11500000, guid: cad2b3d607ce90e45985c8e4aac16f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridSize: {x: 1000, y: 1000}
+  GridSize: {x: 1000, y: 100, z: 1000}
 --- !u!1 &2101376301
 GameObject:
   m_ObjectHideFlags: 0

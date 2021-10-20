@@ -7,14 +7,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(MeshFilter))]
 public class DynamicGrid : MonoBehaviour
 {
-    public double size = 1;
-    bool IsGridEnabled;
     public Text DisableGridButtonText;
     public Text GridSizeButtonText;
     void Awake()
     {
-        IsGridEnabled = true;
-        DrawGrid(size);
+        GGrid.IsEnabled = true;
+        GGrid.g_size = 1;
+        DrawGrid(GGrid.g_size);
     }
 
     private void DrawGrid(double size) {
@@ -57,36 +56,36 @@ public class DynamicGrid : MonoBehaviour
     }
 
     public void ChangeGridSize() {
-        if (size == 0.1)
+        if (GGrid.g_size == 0.1)
         {
-            size = 1.0;
+            GGrid.g_size = 1.0;
         }
-        else if (size == 0.25)
+        else if (GGrid.g_size == 0.25)
         {
-            size = 0.1;
+            GGrid.g_size = 0.1;
         }
         else {
-            size = size / 2;
+            GGrid.g_size = GGrid.g_size / 2;
         }
-        if (size == 0.25) {
-            GridSizeButtonText.text = size.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+        if (GGrid.g_size == 0.25) {
+            GridSizeButtonText.text = GGrid.g_size.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
         }
         else
-            GridSizeButtonText.text = size.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
-        DrawGrid(size);
-        IsGridEnabled = true;
+            GridSizeButtonText.text = GGrid.g_size.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
+        DrawGrid(GGrid.g_size);
+        GGrid.IsEnabled = true;
     }
 
 
     public void DisableGrid() {
-        if (IsGridEnabled) {
+        if (GGrid.IsEnabled) {
             DrawGrid(0.0);
-            IsGridEnabled = false;
+            GGrid.IsEnabled = false;
             DisableGridButtonText.text = "Включить сетку";
         }
         else {
-            DrawGrid(size);
-            IsGridEnabled = true;
+            DrawGrid(GGrid.g_size);
+            GGrid.IsEnabled = true;
             DisableGridButtonText.text = "Отключить сетку";
         }
     }

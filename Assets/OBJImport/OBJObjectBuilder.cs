@@ -72,6 +72,8 @@ public class OBJObjectBuilder  {
         //add meshrenderer
         var mr = go.AddComponent<MeshRenderer>();
         int submesh = 0;
+        var col = go.AddComponent<MeshCollider>();
+        //var ren = go.AddComponent<Renderer>();
 
 
         //locate the material for each submesh
@@ -121,9 +123,10 @@ public class OBJObjectBuilder  {
             msh.RecalculateNormals();
         msh.RecalculateTangents();
         msh.RecalculateBounds();
-
+        col.sharedMesh = msh;
+        
         mf.sharedMesh = msh;
-
+        
         //
         return go;
     }
