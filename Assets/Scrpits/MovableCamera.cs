@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ public class MovableCamera : MonoBehaviour
 	{
 		typeOfUsingText.text = "Режим просмотра(space)";
 		IsFlyCamEnabled = true;
-		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 	public void ChangeTypeOfUsing() {
 		IsFlyCamEnabled = (IsFlyCamEnabled == false) ? true : false;
@@ -31,13 +32,14 @@ public class MovableCamera : MonoBehaviour
 		{
 			typeOfUsingText.text = "Режим редактирования(space)";
 		}
-		Cursor.visible = (Cursor.visible == true) ? false : true;
+		Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? Cursor.lockState = CursorLockMode.None : Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	void Update()
 	{
 		if (Input.GetKey(KeyCode.Space)) {
 			ChangeTypeOfUsing();
+			Thread.Sleep(300);
 		}
 		if (IsFlyCamEnabled) {
 			rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;

@@ -70,10 +70,10 @@
     <Compile Include="Assets\Scrpits\Location.cs" />
     <Compile Include="Assets\OBJImport\TextureLoader\ImageLoaderHelper.cs" />
     <Compile Include="Assets\Scrpits\PlacingProcedure.cs" />
+    <Compile Include="Assets\Scrpits\Grid.cs" />
     <Compile Include="Assets\OBJImport\StringExtensions.cs" />
     <Compile Include="Assets\Scrpits\TemporaryProvision.cs" />
     <Compile Include="Assets\OBJImport\MTLLoader.cs" />
-    <Compile Include="Assets\Scrpits\Grid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
