@@ -21,6 +21,7 @@ public class MovableCamera : MonoBehaviour
 		typeOfUsingText.text = "Режим просмотра(space)";
 		IsFlyCamEnabled = true;
 		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 	public void ChangeTypeOfUsing() {
 		IsFlyCamEnabled = (IsFlyCamEnabled == false) ? true : false;
@@ -33,6 +34,7 @@ public class MovableCamera : MonoBehaviour
 			typeOfUsingText.text = "Режим редактирования(space)";
 		}
 		Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? Cursor.lockState = CursorLockMode.None : Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = (Cursor.visible == true) ? Cursor.visible = false : Cursor.visible = true;
 	}
 
 	void Update()

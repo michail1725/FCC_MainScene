@@ -22,19 +22,19 @@ public class PlacingProcedure : MonoBehaviour
     {
         mainCamera = Camera.main;
     }
-    public void LoadNewObjOnScene()
+    public void LoadNewObjOnScene(string filename)
     {
         if (temporary != null)
         {
             Destroy(temporary.gameObject);
         }
-        string filePath = @"E:\untitled.obj",mltPath = @"E:\untitled.mtl";
-        if (!File.Exists(filePath)|| !File.Exists(mltPath))
+        string filePath = $@"E:\{filename}.obj",mltPath = $@"E:\{filename}.mtl";
+        if (!File.Exists(filePath) || !File.Exists(mltPath))
         {
            return;
         }
         temporary = new TemporaryProvision();
-        temporary.gameObject = new OBJLoader().Load(filePath,mltPath);
+        temporary.gameObject = new OBJLoader().Load(filePath, mltPath);
         y_scaling = 0;
         center = new Vector3();
         center = Vector3.zero;
@@ -96,10 +96,9 @@ public class PlacingProcedure : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.Q))
                 {
-                    if (center.y + (y_scaling - (float)0.001) > 0)
-                    {
-                        y_scaling -= (float)0.0015;
-                    }
+                    //if (center.y + (y_scaling - (float)0.0015) > 0)
+                    
+                    y_scaling -= (float)0.0015;
                     Thread.Sleep(2);
                 }
             }
@@ -110,13 +109,13 @@ public class PlacingProcedure : MonoBehaviour
                 if (!GGrid.IsEnabled)
                 {
                     x = worldPosition.x;
-                    y = center.y + y_scaling;
+                    y = 0 + y_scaling;
                     z = worldPosition.z;
                 }
                 else
                 {
                     x = (float)((int)(worldPosition.x / GGrid.g_size) * GGrid.g_size);
-                    y = center.y + y_scaling;
+                    y = 0 + y_scaling;
                     z = (float)((int)(worldPosition.z / GGrid.g_size) * GGrid.g_size);
                 }
                 bool available = true;
@@ -124,7 +123,7 @@ public class PlacingProcedure : MonoBehaviour
                 temporary.gameObject.transform.position = new Vector3(x, y, z);
                 
                 if (2* x - bounds.size.x < 0 || x > GridSize.x - bounds.size.x/2) available = false;
-                if (y - center.y < 0 || y > GridSize.y - center.y) available = false;
+                if (y < 0 || y > GridSize.y) available = false;
                 if (2* z - bounds.size.z < 0 || z > GridSize.z - bounds.size.z/2) available = false;
                 if (available)
                 {
@@ -136,13 +135,16 @@ public class PlacingProcedure : MonoBehaviour
                             break;
                         }
                     }
+                    temporary.SetTransparent(available, GGrid.IsEnabled);
+                    if (available && Input.GetMouseButtonDown(0) || !GGrid.IsEnabled && Input.GetMouseButtonDown(0))
+                    {
+                        PlaceFlyingBuilding(x, y, z);
+                    }
                 }
-                temporary.SetTransparent(available);
-                if (available && Input.GetMouseButtonDown(0))
-                {
-                    PlaceFlyingBuilding(x, y, z);
+                else {
+                    temporary.SetTransparent(available, true);
                 }
-                else if (Input.GetMouseButtonDown(1) && temporary != null) {
+                if ((Input.GetMouseButtonDown(1) || Input.GetKey(KeyCode.Space)) && temporary != null) {
                     Destroy(temporary.gameObject);
                     temporary = null;
                 }

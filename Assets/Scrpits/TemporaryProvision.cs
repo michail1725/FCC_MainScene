@@ -7,7 +7,7 @@ public class TemporaryProvision
     public GameObject gameObject;
     public Renderer[] rend;
     
-    public void SetTransparent(bool available)
+    public void SetTransparent(bool available,bool by_grid)
     {
         if (available)
         {
@@ -18,9 +18,18 @@ public class TemporaryProvision
         }
         else
         {
-            foreach (Renderer r in rend)
+            if (by_grid)
             {
-                r.material.color = Color.red;
+                foreach (Renderer r in rend)
+                {
+                    r.material.color = Color.red;
+                }
+            }
+            else {
+                foreach (Renderer r in rend)
+                {
+                    r.material.color = Color.yellow;
+                }
             }
         }
     }

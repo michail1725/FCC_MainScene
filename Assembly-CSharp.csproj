@@ -74,6 +74,7 @@
     <Compile Include="Assets\OBJImport\StringExtensions.cs" />
     <Compile Include="Assets\Scrpits\TemporaryProvision.cs" />
     <Compile Include="Assets\OBJImport\MTLLoader.cs" />
+    <Compile Include="Assets\Scrpits\UnityServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - DynamicGrid
     - MovableCamera
     - PlacingProcedure
+    - UnityServer
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.ProBuilderEditor
     Unity.Rider.Editor.dll:
@@ -51,25 +52,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1538}
+      Script: {instanceID: 1540}
     - Class: 114
-      Script: {instanceID: 2130}
+      Script: {instanceID: 2132}
     - Class: 114
-      Script: {instanceID: 2382}
+      Script: {instanceID: 2384}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2596}
+      Script: {instanceID: 2598}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2614}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2788}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3124}
+      Script: {instanceID: 3126}
     - Class: 114
-      Script: {instanceID: 4896}
+      Script: {instanceID: 4510}
+    - Class: 114
+      Script: {instanceID: 4900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -545,6 +548,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UnityServer
   - hash:
       serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
