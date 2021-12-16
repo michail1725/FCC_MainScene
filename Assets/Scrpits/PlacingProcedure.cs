@@ -28,13 +28,22 @@ public class PlacingProcedure : MonoBehaviour
         {
             Destroy(temporary.gameObject);
         }
-        string filePath = $@"E:\{filename}.obj",mltPath = $@"E:\{filename}.mtl";
-        if (!File.Exists(filePath) || !File.Exists(mltPath))
+        string appPath = System.IO.Path.GetDirectoryName(Application.dataPath);
+        appPath = appPath.Substring(0, appPath.LastIndexOf("FCC") + 3);
+        string filePath = appPath + "\\Objects\\" + $"{filename}.obj", mtlPath = appPath + "\\Textures\\" + $"{filename}.mtl";
+        if (!File.Exists(filePath))
         {
-           return;
+            return;
         }
-        temporary = new TemporaryProvision();
-        temporary.gameObject = new OBJLoader().Load(filePath, mltPath);
+        else if (!File.Exists(mtlPath))
+        {
+            temporary = new TemporaryProvision();
+            temporary.gameObject = new OBJLoader().Load(filePath);
+        }
+        else {
+            temporary = new TemporaryProvision();
+            temporary.gameObject = new OBJLoader().Load(filePath, mtlPath);
+        }
         y_scaling = 0;
         center = new Vector3();
         center = Vector3.zero;

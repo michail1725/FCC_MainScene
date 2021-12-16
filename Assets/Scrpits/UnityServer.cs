@@ -29,6 +29,7 @@ public class UnityServer : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		
 		// Start TcpServer background thread 		
 		tcpListenerThread = new Thread(new ThreadStart(ListenForIncommingRequests));
 		tcpListenerThread.IsBackground = true;
