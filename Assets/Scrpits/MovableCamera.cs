@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MovableCamera : MonoBehaviour
 {
+	private Camera mainCamera;
+	private UnityServer unityServer;
 	public float cameraSensitivity = 130;
 	public float climbSpeed = 4;
 	public float normalMoveSpeed = 10;
@@ -15,14 +17,25 @@ public class MovableCamera : MonoBehaviour
 	private bool IsFlyCamEnabled;
 	private float rotationX = 0.0f;
 	private float rotationY = 0.0f;
-
+	public Canvas pause;
+	public Canvas canvas;
 	void Start()
 	{
-		typeOfUsingText.text = "Режим просмотра(space)";
-		IsFlyCamEnabled = true;
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
+		typeOfUsingText.text = "Режим редактирования(space)";
+		IsFlyCamEnabled = false;
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+		mainCamera = Camera.main;
+		pause.gameObject.SetActive(false);
+		unityServer = mainCamera.GetComponent<UnityServer>();
 	}
+
+	public void ReturnKeybordInput() {
+		unityServer.SendMessageToClient("a");
+		pause.gameObject.SetActive(false);
+		canvas.gameObject.SetActive(true);
+	}
+
 	public void ChangeTypeOfUsing() {
 		IsFlyCamEnabled = (IsFlyCamEnabled == false) ? true : false;
 		if (IsFlyCamEnabled)
@@ -74,17 +87,17 @@ public class MovableCamera : MonoBehaviour
 			{
 				transform.position = new Vector3(-10, transform.position.y, transform.position.z);
 			}
-			if (transform.position.x > 1010)
+			if (transform.position.x > 260)
 			{
-				transform.position = new Vector3(1010, transform.position.y, transform.position.z);
+				transform.position = new Vector3(260, transform.position.y, transform.position.z);
 			}
 			if (transform.position.z < -10)
 			{
 				transform.position = new Vector3(transform.position.x, transform.position.y, -10);
 			}
-			if (transform.position.z > 1010)
+			if (transform.position.z > 260)
 			{
-				transform.position = new Vector3(transform.position.x, transform.position.y, 1010);
+				transform.position = new Vector3(transform.position.x, transform.position.y, 260);
 			}
 			if (transform.position.y < 1)
 			{

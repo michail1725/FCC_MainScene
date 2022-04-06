@@ -5,8 +5,6 @@ ScriptsOnlyBuild:
     - MovableCamera
     - PlacingProcedure
     - UnityServer
-    Unity.ProBuilder.Editor.dll:
-    - UnityEditor.ProBuilder.ProBuilderEditor
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -21,6 +19,19 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
+  serializedClasses:
+    UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
+    - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
+    UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.FontData
+    - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
   sceneClasses:
     Assets/Scenes/Main.unity:
     - Class: 1
@@ -52,27 +63,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1540}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 2132}
+      Script: {instanceID: 2248}
     - Class: 114
-      Script: {instanceID: 2384}
+      Script: {instanceID: 2514}
     - Class: 114
-      Script: {instanceID: 2472}
+      Script: {instanceID: 2602}
     - Class: 114
-      Script: {instanceID: 2598}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2614}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 2788}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3016}
+      Script: {instanceID: 3180}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 3300}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 4770}
     - Class: 114
-      Script: {instanceID: 4900}
+      Script: {instanceID: 5184}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -92,6 +103,12 @@ ScriptsOnlyBuild:
     - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UIElements
+    className: PanelRaycaster
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -173,9 +190,9 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Scene
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UIElements
+    className: PanelEventHandler
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -208,7 +225,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: e7ac095475d77ed147f8beef63c0e453
+      Hash: 4b94dc76dec9ea5163c7f44db269877a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovableCamera
@@ -250,7 +267,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: a74405a4829a834d107a0c6e072719ed
+      Hash: c822eec45bd7c5f6d7c8a2d82a6feb07
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
@@ -262,7 +279,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 5ea851281f2e84db25838ad3a82b1437
+      Hash: c8783a6dcf5932c980693a657471cb72
     assemblyName: Unity.ProBuilder.dll
     namespaceName: UnityEngine.ProBuilder.Shapes
     className: ProBuilderShape
@@ -292,7 +309,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: a306e12d896ddcca949923c805691027
+      Hash: 8fbc134fd506d97c845cf2b715231396
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: InputField
@@ -418,7 +435,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: da4cc51a02ce84afe2cecd27cfe6997a
+      Hash: 27ec3360f0c0a6803ba71cc3106480b8
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
@@ -464,12 +481,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Dropdown
-  - hash:
-      serializedVersion: 2
-      Hash: 3474dd566dee71069423d173c25ef7cd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LoadedEquipObject
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -550,7 +561,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 8d68c46790d76956a7e38170ca19e045
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnityServer
@@ -568,19 +579,13 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 77eaee1970f5b697d3c2483d301f80fb
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Location
-  - hash:
-      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 627b7bebfe8130c693fa0818bec1543d
+      Hash: e6f9943056dfa728ab600109332ff14a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlacingProcedure

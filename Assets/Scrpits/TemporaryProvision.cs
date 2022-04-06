@@ -6,7 +6,8 @@ public class TemporaryProvision
 {
     public GameObject gameObject;
     public Renderer[] rend;
-    
+    public bool IsMounted;
+    public int mountedIndex;
     public void SetTransparent(bool available,bool by_grid)
     {
         if (available)
@@ -38,6 +39,13 @@ public class TemporaryProvision
         foreach (Renderer r in rend)
         {
             r.material.color = Color.white;
+        }
+    }
+
+    public void SetSelected() {
+        foreach (Renderer r in rend)
+        {
+            r.material.color = Color.blue;
         }
     }
 }

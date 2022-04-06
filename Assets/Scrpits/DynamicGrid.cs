@@ -17,7 +17,7 @@ public class DynamicGrid : MonoBehaviour
     }
 
     private void DrawGrid(double size) {
-        int len = 1000;
+        int len = 250;
         double GridAmount;
         if (size > 0.0)
         {

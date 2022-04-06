@@ -1,11 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class Location : MonoBehaviour
+
+public class Location
 {
     public float x;
     public float y;
     public float z;
-    public int angle;
+    public float yAngle;
+    public Location(float x,float y,float z, float angle) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.yAngle = angle;
+    }
 }

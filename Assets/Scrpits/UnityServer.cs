@@ -25,37 +25,85 @@ public class UnityServer : MonoBehaviour
 	#endregion
 	private GameObject gm;
 	private PlacingProcedure sc;
+	private MovableCamera mc;
+	TemporaryProvision temporary;
 	string clientMessage = "";
+	public Canvas pause;
+	public Canvas canvas;
 	// Use this for initialization
-	void Start()
+
+	void Awake()
 	{
-		
-		// Start TcpServer background thread 		
-		tcpListenerThread = new Thread(new ThreadStart(ListenForIncommingRequests));
-		tcpListenerThread.IsBackground = true;
-		tcpListenerThread.Start();
-		gm = GameObject.Find("Plane");
-		sc = gm.GetComponent<PlacingProcedure>();
-	}
+        // Start TcpServer background thread 		
+        tcpListenerThread = new Thread(new ThreadStart(ListenForIncommingRequests));
+        tcpListenerThread.IsBackground = true;
+        tcpListenerThread.Start();
+        gm = GameObject.Find("Plane");
+        sc = gm.GetComponent<PlacingProcedure>();
+    }
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (clientMessage != "") {
-			sc.LoadNewObjOnScene(clientMessage);
+		if (clientMessage != "")
+		{
+			if (temporary != null) {
+				temporary.SetNormal();
+				temporary = null;
+			}
+			if (clientMessage[0] == 'p')
+			{
+				sc.LoadNewObjOnScene(clientMessage.Substring(2));
+				canvas.gameObject.SetActive(true);
+				pause.gameObject.SetActive(false);
+			}
+			else if (clientMessage[0] == 's')
+			{
+				canvas.gameObject.SetActive(true);
+				pause.gameObject.SetActive(false);
+				GameObject go = GameObject.Find(Scene.basic_name + clientMessage.Substring(2));
+				temporary = new TemporaryProvision();
+				temporary.gameObject = go;
+				temporary.rend = temporary.gameObject.GetComponentsInChildren<Renderer>();
+				temporary.SetSelected();
+			}
+			else if (clientMessage[0] == 'd')
+			{
+				canvas.gameObject.SetActive(true);
+				pause.gameObject.SetActive(false);
+				GameObject go = GameObject.Find(Scene.basic_name + clientMessage.Substring(2));
+				Destroy(go);
+				Scene.DeleteFromSceneList(Convert.ToInt32(clientMessage.Substring(2)));
+				SendMessageToClient("s " + Math.Round(Scene.ReturnArea(),2));
+				Thread.Sleep(50);
+				SendMessageToClient("h " + Math.Round(Scene.highest_point,2));
+			}
+			else if (clientMessage[0] == 'r')
+			{
+				canvas.gameObject.SetActive(true);
+				pause.gameObject.SetActive(false);
+				Scene.RelocateObject(Convert.ToInt32(clientMessage.Substring(2)));
+				GameObject go = GameObject.Find(Scene.basic_name + clientMessage.Substring(2));
+				temporary = new TemporaryProvision();
+				temporary.gameObject = go.gameObject;
+				temporary.IsMounted = true;
+				temporary.mountedIndex = Convert.ToInt32(clientMessage.Substring(2));
+				temporary.rend = temporary.gameObject.GetComponentsInChildren<Renderer>();
+				sc.RelocateObject(temporary);
+			}
+			else if (clientMessage[0] == 'w') {
+				canvas.gameObject.SetActive(false);
+				pause.gameObject.SetActive(true);
+			}
 			clientMessage = "";
 		}
-		//if (Input.GetKeyDown(KeyCode.Space))
-		//{
-		//	SendMessage();
-		//}
 	}
 
-    private void OnDestroy()
+    void OnApplicationQuit()
     {
-		tcpListener.Stop();
-		connectedTcpClient.Close();
-		tcpListenerThread.Abort();
+        tcpListener?.Stop();
+        connectedTcpClient?.Close();
+        tcpListenerThread?.Abort();
     }
 
     /// <summary> 	
@@ -64,9 +112,8 @@ public class UnityServer : MonoBehaviour
     private void ListenForIncommingRequests()
 	{
 		try
-		{
-			// Create listener on localhost port 8052. 			
-			tcpListener = new TcpListener(IPAddress.Parse("127.0.0.1"), 8052);
+		{ 			
+			tcpListener = new TcpListener(IPAddress.Parse("127.0.0.1"), 8050);
 			tcpListener.Start();
 			Debug.Log("Server is listening");
 			byte[] bytes = new byte[1024];
@@ -96,33 +143,34 @@ public class UnityServer : MonoBehaviour
 			Debug.Log("SocketException " + socketException.ToString());
 		}
 	}
+
+	
 	/// <summary> 	
 	/// Send message to client using socket connection. 	
 	/// </summary> 	
-	private void SendMessage()
+	public void SendMessageToClient(string serverMessage)
 	{
-		if (connectedTcpClient == null)
-		{
-			return;
-		}
+        if (connectedTcpClient == null)
+        {
+            return;
+        }
 
-		try
-		{
-			// Get a stream object for writing. 			
-			NetworkStream stream = connectedTcpClient.GetStream();
-			if (stream.CanWrite)
-			{
-				string serverMessage = "This is a message from your server.";
-				// Convert string message to byte array.                 
-				byte[] serverMessageAsByteArray = Encoding.ASCII.GetBytes(serverMessage);
-				// Write byte array to socketConnection stream.               
-				stream.Write(serverMessageAsByteArray, 0, serverMessageAsByteArray.Length);
-				Debug.Log("Server sent his message - should be received by client");
-			}
-		}
-		catch (SocketException socketException)
-		{
-			Debug.Log("Socket exception: " + socketException);
-		}
-	}
+        try
+        {
+            // Get a stream object for writing. 			
+            NetworkStream stream = connectedTcpClient.GetStream();
+            if (stream.CanWrite)
+            {
+                // Convert string message to byte array.                 
+                byte[] serverMessageAsByteArray = Encoding.ASCII.GetBytes(serverMessage);
+                // Write byte array to socketConnection stream.               
+                stream.Write(serverMessageAsByteArray, 0, serverMessageAsByteArray.Length);
+                Debug.Log("Server sent his message - should be received by client");
+            }
+        }
+        catch (SocketException socketException)
+        {
+            Debug.Log("Socket exception: " + socketException);
+        }
+    }
 }
